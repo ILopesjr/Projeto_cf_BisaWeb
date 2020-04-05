@@ -1,4 +1,4 @@
-# projeto controle financeiro Bisaweb
+# Projeto Controle Financeiro Bisaweb
 
 # Tecnologias usadas: #
  
