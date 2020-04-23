@@ -28,8 +28,9 @@ class MovimentacaoFinanceiraController extends Controller
     public function create()
     {
         $conta_bancarias = DB::table('conta_bancarias')->orderBy('id', 'desc')->get();
-        $movimentacao_financeiras = DB::table('movimentacao_financeiras')->get();
-        return view('movimentacao_financeiras.create', ['conta_bancarias' => $conta_bancarias], ['movimentacao_financeiras' => $movimentacao_financeiras]);
+        // $movimentacao_financeiras = DB::table('movimentacao_financeiras')->get();
+        
+        return view('movimentacao_financeiras.create', ['conta_bancarias' => $conta_bancarias]);
     }
 
     /**
@@ -56,6 +57,23 @@ class MovimentacaoFinanceiraController extends Controller
             'id_conta_bancaria' => 'required'
 
         ], $mensagens);
+
+        $conta_bancaria = Conta_bancaria::find($request->id_conta_bancaria);
+        if($conta_bancaria){
+            if($request->tipo_movimentacao == 1){
+                $saldo = $conta_bancaria->saldo_inicial + $request->valor;
+                $id = $request->id_conta_bancaria;
+                DB::table('conta_bancarias')
+                ->where('id', $id)
+                ->update(['saldo_inicial'=> $saldo]);
+            } else{
+                $saldo = $conta_bancaria->saldo_inicial - $request->valor;
+                $id = $request->id_conta_bancaria;
+                DB::table('conta_bancarias')
+                ->where('id', $id)
+                ->update(['saldo_inicial'=> $saldo]);
+            }
+        }      
 
         Movimentacao_Financeira::create([
             'descricao' => $request->descricao,            
@@ -126,6 +144,24 @@ class MovimentacaoFinanceiraController extends Controller
         $movimentacao_financeira->data_movimentacao = $request->data_movimentacao;
         $movimentacao_financeira->id_conta_bancaria = $request->id_conta_bancaria;
         $movimentacao_financeira->save();
+
+        $conta_bancaria = Conta_bancaria::find($request->id_conta_bancaria);
+        if($conta_bancaria){
+            if($request->tipo_movimentacao == 1){
+                $saldo = $conta_bancaria->saldo_inicial + $request->valor;
+                $id = $request->id_conta_bancaria;
+                DB::table('conta_bancarias')
+                ->where('id', $id)
+                ->update(['saldo_inicial'=> $saldo]);
+            } else{
+                $saldo = $conta_bancaria->saldo_inicial - $request->valor;
+                $id = $request->id_conta_bancaria;
+                DB::table('conta_bancarias')
+                ->where('id', $id)
+                ->update(['saldo_inicial'=> $saldo]);
+            }
+        }
+
         session()->flash('message', 'Movimentação atualizada com sucesso!');
         return redirect()->back();
     }
