@@ -19,11 +19,9 @@
 8.	Usar o comando no terminal -> php artisan cache:clear
 9.	Usar o comando no terminal -> php artisan config:clear
 10.	Usar o comando no terminal -> php artisan migrate
-11.	Usar o comando no terminal -> php artisan db:seed
-12. Usar o comando no terminal -> php artisan key:generate
-13.	Usar o comando no terminal -> php artisan serve
-14.	Acessar no browser -> localhost:8000
-15.	Entrar no Link Registrar, realizar o cadastro do usuário e usar o sistema.
+11. Usar o comando no terminal -> php artisan key:generate
+12.	Usar o comando no terminal -> php artisan serve
+13.	Acessar no browser -> localhost:8000
 
 # Desafio Bisaweb #
 
