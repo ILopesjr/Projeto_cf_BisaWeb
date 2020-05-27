@@ -500,6 +500,7 @@ class ComposerStaticInitebf4eae87c43fbdec966e5f76bb9e873
         'App\\Http\\Controllers\\ContaBancariaController' => __DIR__ . '/../..' . '/app/Http/Controllers/ContaBancariaController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\MovimentacaoFinanceiraController' => __DIR__ . '/../..' . '/app/Http/Controllers/MovimentacaoFinanceiraController.php',
+        'App\\Http\\Controllers\\RelatorioController' => __DIR__ . '/../..' . '/app/Http/Controllers/RelatorioController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

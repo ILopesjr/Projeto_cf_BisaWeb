@@ -11,6 +11,7 @@ return array(
     'App\\Http\\Controllers\\ContaBancariaController' => $baseDir . '/app/Http/Controllers/ContaBancariaController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\MovimentacaoFinanceiraController' => $baseDir . '/app/Http/Controllers/MovimentacaoFinanceiraController.php',
+    'App\\Http\\Controllers\\RelatorioController' => $baseDir . '/app/Http/Controllers/RelatorioController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',
